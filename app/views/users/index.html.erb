@@ -1,0 +1,22 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Users</h1>
+
+<span><%= link_to "New user", new_user_path, data: { controller: "user-modal" }, class: 'btn btn-primary mb-3' %></span>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <th>Name</th>
+    <th>Email</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Country</th>
+    <th>Contact No</th>
+    <th>Actions</th>
+  </thead>
+  <tbody id="user_list">
+    <% @users.each do |user| %>
+      <%= render "user", user: user %>
+    <% end %>
+  </tbody>
+</table>
